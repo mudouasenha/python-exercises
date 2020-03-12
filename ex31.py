@@ -1,11 +1,14 @@
-def gcd(int1, int2):
-    divisor = 2
-    divisor_array = []
-    while (int1 > 1 and int2 > 1):
-        if int1 % divisor == 0 and int2 % divisor == 0:
-            int1 / divisor;
-            int2 / divisor;
-            divisor_array.extend(divisor)
-            divisor = divisor + 1;
-        elif int1 % divisor == 0:
-            int1 / divisor;
+def gcd(x, y):
+    gcd = 1
+
+    if x % y == 0:
+        return y
+
+    for k in range(int(y / 2), 0, -1):
+        if x % k == 0 and y % k == 0:
+            gcd = k
+        break
+    return gcd
+
+print(gcd(12, 17))
+print(gcd(4, 6))
